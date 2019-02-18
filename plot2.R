@@ -1,4 +1,4 @@
-# To create plot 1: Global Active Power vs. Frequency
+# To create plot 2: Global Active Power vs. Datetimezonesy
 library("data.table")
 setwd("~/data/")
 # Reads in the data
@@ -21,13 +21,3 @@ plot(x=sub_data[,dateTime],y =sub_data[,Global_active_power], type="l", xlab="",
 dev.off()
 #Filter date for 2007-02-01 and 2007-02-02
 
-
-sub_data <- powdata[(Date >= "2007-02-01") & (Date <= "2007-02-02")]
-
-#plot 
-
-png("plot1.png", width=480, height=480)
-
-hist(sub_data[,Global_active_power],main="Global Active Power",xlab="Global Active Power (kilowatts)", ylab="Frequency", col= "red")
-
-dev.off()
